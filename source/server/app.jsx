@@ -7,6 +7,8 @@ import { match, RouterContext } from 'react-router';
 import { routes } from '../shared/routes';
 
 const app = express();
+const port = 80;
+
 app.set('view engine', 'ejs');
 
 app.get('*', (req, res) => {
@@ -28,6 +30,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, function() {
-  console.log('Express listening on port 3000');
+app.listen(port, function() {
+  console.log('Express listening on port ' + port);
 });
