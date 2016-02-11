@@ -4,9 +4,8 @@
   "description": "Isomorphic React Portfolio Site",
   "main": "source/server.js",
   "scripts": {
-    "build": "babel source/shared -d dist/shared; babel source/server -d dist/server",
-    "serve": "node dist/server/app.js",
-    "start": "npm run build; npm run serve"
+    "postinstall": "babel source/shared -d dist/shared; babel source/server -d dist/server",
+    "start": "node dist/server/app.js"
   },
   "author": "Alasdair McLeay",
   "license": "ISC",
