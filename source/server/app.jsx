@@ -7,7 +7,7 @@ import { match, RouterContext } from 'react-router';
 import { routes } from '../shared/routes';
 
 const app = express();
-const port = 80;
+const port = process.env.PORT || 8080;
 
 app.set('view engine', 'ejs');
 
