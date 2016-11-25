@@ -14,9 +14,7 @@
     "express": "^4.13.4",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "react-router": "^2.0.0"
-  },
-  "devDependencies": {
+    "react-router": "^2.0.0",
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.1",
     "babel-loader": "^6.2.2",
