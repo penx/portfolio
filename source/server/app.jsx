@@ -13,6 +13,7 @@ const port = process.env.PORT || 8080;
 app.set('view engine', 'ejs');
 
 app.use('/styles', express.static(path.join(__dirname, '../styles')))
+app.use('/client', express.static(path.join(__dirname, '../client')))
 
 app.get('*', (req, res) => {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
