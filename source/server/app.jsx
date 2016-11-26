@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import express from 'express';
+import compression from 'compression';
 import path from 'path';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
 import { routes } from '../shared/routes';
 
+
+
 const app = express();
 const port = process.env.PORT || 8080;
+
+app.use(compression());
 
 app.set('view engine', 'ejs');
 
