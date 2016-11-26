@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "description": "Isomorphic React Portfolio Site",
   "main": "source/server.js",
+  "private": true,
   "scripts": {
     "postinstall": "npm run build",
-    "start": "node dist/server/app.js",
+    "start": "npm run start:native",
+    "start:web": "node dist/server/app.js",
     "build": "npm run build:shared && npm run build:server && npm run build:client && npm run build:styles",
     "build:shared": "babel source/shared -d dist/shared",
     "build:server": "babel source/server -d dist/server",
     "build:client": "npm run webpack",
     "build:styles": "node-sass source/styles/main.scss dist/styles/main.css --output-style compressed",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "start:native": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
   },
   "author": "Alasdair McLeay",
   "license": "ISC",
@@ -27,9 +31,19 @@
     "express": "^4.13.4",
     "material-design-lite": "^1.2.1",
     "node-sass": "^3.13.0",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-router": "^2.0.0",
+    "react": "15.4.1",
+    "react-dom": "^15.4.1",
+    "react-native": "0.38.0",
+    "react-router": "^3.0.0",
     "webpack": "^1.13.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "devDependencies": {
+    "babel-jest": "17.0.2",
+    "babel-preset-react-native": "1.9.0",
+    "jest": "17.0.3",
+    "react-test-renderer": "15.4.1"
   }
 }
