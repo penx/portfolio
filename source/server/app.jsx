@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import express from 'express';
+import path from 'path';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
@@ -10,6 +11,8 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 app.set('view engine', 'ejs');
+
+app.use('/styles', express.static(path.join(__dirname, '../styles')))
 
 app.get('*', (req, res) => {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {

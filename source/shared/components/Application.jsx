@@ -4,8 +4,12 @@ export default class ApplicationComponent extends React.Component {
   render() {
     return (
       <div>
-        <h1> Portfolio </h1>
-        {this.props.children}
+        <header className="application-header">
+          <span className="application-title">Portfolio</span>
+        </header>
+        <section className="application-content">
+          {this.props.children}
+        </section>
       </div>
     )
   }
