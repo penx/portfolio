@@ -6,7 +6,7 @@ export default class ArticleComponent extends React.Component {
     return (
       <div>
         <h2>Article</h2>
-        <p>Go to <Link to='/subpage'>subpage</Link></p>
+        <p>Go to <Link to='/project/example-slug'>a project</Link></p>
         {this.props.children}
       </div>
     )
