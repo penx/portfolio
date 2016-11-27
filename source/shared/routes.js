@@ -1,6 +1,6 @@
 import ApplicationComponent from './components/Application';
-import IndexComponent from './components/Index';
-import SubPageComponent from './components/SubPage';
+import ArticleComponent from './components/Article';
+import ProjectComponent from './components/Project';
 
 import React from 'react';
 import { Route } from 'react-router';
@@ -8,7 +8,7 @@ import { Route } from 'react-router';
 
 export const routes = (
   <Route path="" component={ApplicationComponent}>
-    <Route path="/" component={IndexComponent} />
-    <Route path="/subpage" component={SubPageComponent} />
+    <Route path="/" component={ArticleComponent} />
+    <Route path="/subpage" component={ProjectComponent} />
   </Route>
 );

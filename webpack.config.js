@@ -4,7 +4,7 @@ let path = require('path');
 let webpack = require('webpack');
 
 module.exports = {
-  entry: path.join(process.cwd(), 'source/client/app.jsx'),
+  entry: path.join(process.cwd(), 'source/client/app.js'),
   output: {
     path: './dist/client/',
     filename: 'build.js'
