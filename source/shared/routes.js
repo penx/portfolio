@@ -1,4 +1,4 @@
-import ApplicationComponent from './components/Application';
+import Root from './containers/Root';
 import ArticleComponent from './components/Article';
 import ProjectComponent from './components/Project';
 
@@ -7,7 +7,7 @@ import { Route } from 'react-router';
 
 
 export const routes = (
-  <Route path="" component={ApplicationComponent}>
+  <Route path="" component={Root}>
     <Route path="/" component={ArticleComponent} />
     <Route path="/project/:projectId" component={ProjectComponent} />
   </Route>
