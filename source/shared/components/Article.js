@@ -13,7 +13,11 @@ export default class ArticleComponent extends React.Component {
     return (
       <div>
         <h2>{title}</h2>
-        <p>Go to <Link to='/project/example-slug'>a project</Link></p>
+        <ul>
+          <li><Link to='/project/example-slug'>project 1</Link></li>
+          <li><Link to='/project/example-slug-2'>project 2</Link></li>
+          <li><Link to='/project/example-slug-3'>project 3</Link></li>
+        </ul>
         {this.props.children}
       </div>
     )
