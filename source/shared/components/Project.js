@@ -22,8 +22,8 @@ class ProjectComponent extends Component {
         }
         {project &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <h2>Project</h2>
-            {project}
+            <h2>{project.title}</h2>
+            <p>{project.description}</p>
           </div>
         }
         <p>Go to <Link to='/'>index</Link></p>
@@ -41,10 +41,11 @@ ProjectComponent.propTypes = {
 }
 
 function mapStateToProps(state) {
-  const { selectedProject, projects } = state
+  const { selectedProject, projects } = state;
   const {
     isFetching,
     lastUpdated,
+    project
   } = projects[selectedProject] || {
     isFetching: true
   }
@@ -52,7 +53,8 @@ function mapStateToProps(state) {
   return {
     selectedProject,
     isFetching,
-    lastUpdated
+    lastUpdated,
+    project
   }
 }
 
