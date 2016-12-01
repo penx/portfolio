@@ -1,3 +1,4 @@
+// 3rd party libs
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import express from 'express';
@@ -6,12 +7,30 @@ import path from 'path';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
+// my libs
+import portfolioApi from 'portfolio-api';
+import portfolioApiBlueprint from 'portfolio-api-blueprint';
+
+// internal
 import { routes } from '../shared/routes';
-
-
 
 const app = express();
 const port = process.env.PORT || 8080;
+const config = {
+  api: {
+    type: 'blueprint' //TODO: allow to be set to url, module
+  }
+}
+
+const apiUrl;
+
+if(config.api.type === 'blueprint') {
+  console.log('blueprint');
+} else if (config.api.type === 'module') {
+  // map given module to express path
+} else if (config.api.type === 'url') {
+  apiUrl = config.api.url;
+}
 
 app.use(compression());
 

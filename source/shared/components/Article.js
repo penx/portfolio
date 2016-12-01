@@ -9,9 +9,10 @@ export default class ArticleComponent extends React.Component {
   }
 
   render() {
-    // TODO: List of projects to come from state
+    // TODO: Load article and list of projects via API
     const {title} = this.state;
     return (
+      // TODO: seperate component/page for project list 
       <div>
         <h2>{title}</h2>
         <ul>

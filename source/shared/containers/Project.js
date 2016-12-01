@@ -6,8 +6,8 @@ import { fetchProjectIfNeeded } from '../actions'
 class ProjectComponent extends Component {
 
   componentDidMount() {
-    const { dispatch, selectedProject } = this.props
-    dispatch(fetchProjectIfNeeded(selectedProject))
+    const { dispatch, selectedProject } = this.props;
+    dispatch(fetchProjectIfNeeded(selectedProject));
   }
 
   render() {

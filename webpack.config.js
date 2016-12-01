@@ -3,6 +3,8 @@
 let path = require('path');
 let webpack = require('webpack');
 
+// TODO: dist and dev builds, eslint, live reload, sass
+
 module.exports = {
   entry: path.join(process.cwd(), 'source/client/app.js'),
   output: {
