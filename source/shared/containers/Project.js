@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
@@ -24,6 +26,7 @@ class ProjectComponent extends Component {
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <h2>{project.title}</h2>
             <p>{project.description}</p>
+            <p>{selectedProject}, {lastUpdated}</p>
           </div>
         }
         <p>Go to <Link to="/">index</Link></p>
@@ -38,6 +41,8 @@ ProjectComponent.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired,
+  project: PropTypes.node.isRequired,
+  children: React.PropTypes.element.isRequired,
 }
 
 function mapStateToProps(state) {
