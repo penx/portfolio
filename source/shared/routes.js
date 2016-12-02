@@ -1,10 +1,9 @@
-import Root from './containers/Root';
-import ArticleComponent from './components/Article';
-import ProjectComponent from './containers/Project';
-
 import React from 'react';
 import { Route } from 'react-router';
 
+import Root from './containers/Root';
+import ArticleComponent from './components/Article';
+import ProjectComponent from './containers/Project';
 
 export const routes = (
   <Route path="" component={Root}>

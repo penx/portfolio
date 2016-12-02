@@ -1,4 +1,5 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
+
 import {
   SELECT_PROJECT,
   RECEIVE_PROJECT,
@@ -53,4 +54,3 @@ const rootReducer = combineReducers({
 })
 
 export default rootReducer
-
