@@ -26,7 +26,7 @@ function fetchProject(projectSlug) {
   // of a project contains current project in state
   return dispatch => {
     dispatch(requestProject(projectSlug));
-    return fetch(`http://localhost:8081/project/${projectSlug}`)
+    return fetch(`http://localhost:8080/api/project/${projectSlug}`)
       .then(response => response.json())
       .then(json => dispatch(receiveProject(projectSlug, json)));
   };
