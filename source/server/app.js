@@ -12,15 +12,15 @@ import portfolioApi from 'portfolio-api';
 import portfolioApiBlueprint from 'portfolio-api-blueprint';
 
 // internal
-import { routes } from '../shared/routes';
+import routes from '../shared/routes';
 
 const app = express();
 const reactApp = express();
 const port = process.env.PORT || 8080;
-// TODO: import config from a js file with a .default included in git - allow to be set to url, module. 
+// TODO: import config from a js file with a .default included in git - allow to be set to url, module.
 const config = {
   api: {
-    type: 'blueprint' 
+    type: 'blueprint'
   }
 }
 let apiUrl;
@@ -36,7 +36,7 @@ if(config.api.type === 'blueprint') {
   apiUrl = config.api.url;
 }
 
-// TODO: send api url through to react app in a way that can be accessed by client and server - perhaps add in to state on the server, or add as data prop in ejs template? 
+// TODO: send api url through to react app in a way that can be accessed by client and server - perhaps add in to state on the server, or add as data prop in ejs template?
 reactApp.use(compression());
 reactApp.set('view engine', 'ejs');
 reactApp.use('/styles', express.static(path.join(__dirname, '../styles')))

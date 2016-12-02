@@ -1,0 +1,22 @@
+{
+  parser: "babel-eslint",
+  extends: "airbnb",
+  ecmaFeatures: {
+    jsx: true,
+    modules: true
+  },
+  env: {
+    browser: true,
+    node: true,
+    mocha: true
+  },
+  rules: {
+    "prefer-stateless-function": [0, "never"],
+    "semi": [2, "never"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+  },
+  plugins: [
+    "babel",
+    "react"
+  ]
+}
