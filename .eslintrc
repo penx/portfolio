@@ -11,7 +11,6 @@
     mocha: true
   },
   rules: {
-    "prefer-stateless-function": [0, "never"],
     "semi": [2, "never"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   },
