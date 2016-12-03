@@ -28,6 +28,7 @@
   "homepage": "https://github.com/penx/portfolio#readme",
   "dependencies": {
     "compression": "^1.6.2",
+    "drakov": "^1.0.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "isomorphic-fetch": "^2.2.1",
