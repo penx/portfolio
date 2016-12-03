@@ -3,21 +3,32 @@
   "version": "1.0.0",
   "description": "Isomorphic React Portfolio Site",
   "main": "source/server.js",
+  "engines": {
+    "node": "7.0.0"
+  },
   "scripts": {
-    "build": "npm run build:shared && npm run build:server && npm run build:client && npm run build:styles",
-    "build:shared": "babel source/shared -d dist/shared",
-    "build:server": "babel source/server -d dist/server",
     "build:client": "npm run webpack",
+    "build:server": "babel source/server -d dist/server",
+    "build:shared": "babel source/shared -d dist/shared",
+    "build": "npm run build:shared && npm run build:server && npm run build:client && npm run build:styles",
     "build:styles": "node-sass source/styles/main.scss dist/styles/main.css --output-style compressed",
     "eslint": "eslint source/**/*.js",
     "flow": "flow",
     "postinstall": "npm run build",
     "start": "node dist/server/app.js",
-    "test": "npm run eslint && npm run flow",
+    "test": "npm run eslint && npm run flow && npm run build",
     "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penx/portfolio.git"
   },
   "author": "Alasdair McLeay",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/penx/portfolio/issues"
+  },
+  "homepage": "https://github.com/penx/portfolio#readme",
   "dependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.1",
@@ -45,13 +56,13 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
-    "eslint": "^3.11.1",
-    "eslint-config-airbnb": "^13.0.0",
     "eslint-config-airbnb-flow": "^1.0.2",
+    "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-babel": "^4.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
+    "eslint": "^3.11.1",
     "flow-bin": "^0.36.0"
   }
 }
