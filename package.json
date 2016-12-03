@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Isomorphic React Portfolio Site",
   "main": "source/server.js",
+  "engines": {
+    "node": "7.0.0"
+  },
   "scripts": {
     "build:client": "npm run webpack",
     "build:server": "babel source/server -d dist/server",
