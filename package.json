@@ -11,7 +11,6 @@
     "build:styles": "node-sass source/styles/main.scss dist/styles/main.css --output-style compressed",
     "eslint": "eslint source/**/*.js",
     "flow": "flow",
-    "heroku-prebuild": "npm install --only=dev",
     "postinstall": "postinstall-build dist \"npm run build\"",
     "start": "node dist/server/app.js",
     "test": "npm run eslint && npm run flow && npm run build",
