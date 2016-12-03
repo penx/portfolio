@@ -1,18 +1,23 @@
-import React from 'react';
+// @flow
 
-export default class ApplicationComponent extends React.Component {
+import React from 'react'
+
+type Props = {
+  children?: React.PropTypes.element.isRequired,
+}
+
+const ApplicationComponent = (props: Props) =>
   // TODO: Navigation - links to home, project list
   // TODO: Link to article list if there's more than one article
-  render() {
-    return (
-      <div>
-        <header className="application-header">
-          <span className="application-title">Portfolio</span>
-        </header>
-        <section className="application-content">
-          {this.props.children}
-        </section>
-      </div>
-    )
-  }
-}
+   (
+     <div>
+       <header className="application-header">
+         <span className="application-title">Portfolio</span>
+       </header>
+       <section className="application-content">
+         {props.children}
+       </section>
+     </div>
+  )
+
+export default ApplicationComponent
