@@ -2,12 +2,14 @@
 
 Portfolio Site utilising:
 
-- Isomorphic React with async loading
+- Isomorphic/Universal React
 - Redux
 - Consumes Rest API
-- Contentful via portfolio-api
+- Redux thunk for universal async data sources
+- CaaS (Contentful) via portfolio-api
 - API Blueprint and mock server via portfolio-api-blueprint
 - Bootstrap 4 as a reset and mixin library only
+- Flow for type checking
 
 To run:
 

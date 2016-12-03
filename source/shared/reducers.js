@@ -3,20 +3,9 @@
 import { combineReducers } from 'redux'
 
 import {
-  SELECT_PROJECT,
   RECEIVE_PROJECT,
   REQUEST_PROJECT,
 } from './actions'
-
-// TODO: slug needs to come from route
-function selectedProject(state = 'example_slug', action) {
-  switch (action.type) {
-    case SELECT_PROJECT:
-      return action.projectSlug
-    default:
-      return state
-  }
-}
 
 function project(state = {
   isFetching: false,
@@ -52,7 +41,6 @@ function projects(state = { }, action) {
 
 const rootReducer = combineReducers({
   projects,
-  selectedProject,
 })
 
 export default rootReducer
