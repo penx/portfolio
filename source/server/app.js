@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+// @flow
 
 // 3rd party libs
 import React from 'react'

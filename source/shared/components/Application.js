@@ -3,11 +3,10 @@
 import React from 'react'
 
 type Props = {
-  children: React.PropTypes.element.isRequired,
+  children?: React.PropTypes.element.isRequired,
 }
 
 const ApplicationComponent = (props: Props) =>
-
   // TODO: Navigation - links to home, project list
   // TODO: Link to article list if there's more than one article
    (

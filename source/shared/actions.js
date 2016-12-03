@@ -1,3 +1,5 @@
+// @flow
+
 import fetch from 'isomorphic-fetch'
 
 export const REQUEST_PROJECT = 'REQUEST_PROJECT'
@@ -38,17 +40,17 @@ function shouldFetchProject(state, projectSlug) {
     return true
   } else if (project.isFetching) {
     return false
-  } else {
-    // TODO: handle invalid project object, e.g. project exists in state from
-    // REQUEST_PROJECT but API returned error
-    return project.didInvalidate
   }
+  // TODO: handle invalid project object, e.g. project exists in state from
+  // REQUEST_PROJECT but API returned error
+  return project.didInvalidate
 }
 
-export function fetchProjectIfNeeded(projectSlug) {
-  return (dispatch, getState) => {
+export function fetchProjectIfNeeded(projectSlug: string) {
+  return (dispatch: Function, getState: Function) => {
     if (shouldFetchProject(getState(), projectSlug)) {
       return dispatch(fetchProject(projectSlug))
     }
+    return false
   }
 }

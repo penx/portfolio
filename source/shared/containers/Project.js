@@ -41,8 +41,8 @@ ProjectComponent.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired,
-  project: PropTypes.node.isRequired,
-  children: React.PropTypes.element.isRequired,
+  project: PropTypes.node,
+  children: React.PropTypes.element,
 }
 
 function mapStateToProps(state) {
