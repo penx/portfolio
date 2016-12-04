@@ -24,7 +24,7 @@
     "start": "node dist/server/app.js",
     "test": "npm run eslint && npm run flow && npm run build",
     "webpack": "webpack --progress --colors",
-    "webpack:dev:watch": "webpack --config webpack.dev.js  --progress --colors --watch"
+    "webpack:dev:watch": "webpack --config webpack.dev.js --progress --colors --watch"
   },
   "repository": {
     "type": "git",
