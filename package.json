@@ -9,15 +9,22 @@
   "scripts": {
     "build:client": "npm run webpack",
     "build:server": "babel source/server -d dist/server",
+    "build:server:watch": "babel -w source/server -d dist/server",
     "build:shared": "babel source/shared -d dist/shared",
-    "build": "npm run build:shared && npm run build:server && npm run build:client && npm run build:styles",
+    "build:shared:watch": "babel -w source/shared -d dist/shared",
     "build:styles": "node-sass source/styles/main.scss dist/styles/main.css --output-style compressed",
+    "build:styles:watch": "node-sass -w source/styles/main.scss dist/styles/main.css --output-style compressed",
+    "build:watch": "npm run webpack:watch & npm run build:styles:watch & npm run build:server:watch & npm run build:shared:watch",
+    "build": "npm run build:shared && npm run build:server && npm run build:client && npm run build:styles",
+    "dev": "npm run nodemon & npm run build:watch",
     "eslint": "eslint source/**/*.js",
     "flow": "flow",
+    "nodemon": "nodemon -w source/server -w source/shared source/server/app.js  --exec babel-node",
     "postinstall": "npm run build",
     "start": "node dist/server/app.js",
     "test": "npm run eslint && npm run flow && npm run build",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "webpack:watch": "webpack  --progress --colors --watch"
   },
   "repository": {
     "type": "git",
@@ -56,13 +63,14 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
-    "eslint-config-airbnb-flow": "^1.0.2",
+    "eslint": "^3.11.1",
     "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-airbnb-flow": "^1.0.2",
     "eslint-plugin-babel": "^4.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
-    "eslint": "^3.11.1",
-    "flow-bin": "^0.36.0"
+    "flow-bin": "^0.36.0",
+    "nodemon": "^1.11.0"
   }
 }
