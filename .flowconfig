@@ -1,8 +1,8 @@
 [include]
-./source
+source/
 
 [ignore]
-./dist/.*
+dist/
 .*/node_modules/babel-types/.*
 .*/node_modules/fbjs/lib/.*
 .*/node_modules/sabor/.*
