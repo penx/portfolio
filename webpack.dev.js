@@ -11,7 +11,6 @@ module.exports = {
   },
   devtool: 'sourcemap',
   plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     }),

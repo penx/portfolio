@@ -12,9 +12,9 @@
     "build:server:watch": "babel -w source/server -d dist/server",
     "build:shared": "babel source/shared -d dist/shared",
     "build:shared:watch": "babel -w source/shared -d dist/shared",
-    "build:styles": "node-sass source/styles/main.scss dist/styles/main.css --output-style compressed",
-    "build:styles:watch": "node-sass -w source/styles/main.scss dist/styles/main.css --output-style compressed",
-    "build:watch": "npm run webpack:watch & npm run build:styles:watch & npm run build:server:watch & npm run build:shared:watch",
+    "build:styles": "node-sass source/styles/main.scss static/styles/main.css --output-style compressed",
+    "build:styles:watch": "npm run build:styles && node-sass -w source/styles/main.scss static/styles/main.css --output-style compressed",
+    "build:watch": "npm run webpack:dev:watch & npm run build:styles:watch & npm run build:server:watch & npm run build:shared:watch",
     "build": "npm run build:shared && npm run build:server && npm run build:client && npm run build:styles",
     "dev": "npm run nodemon & npm run build:watch",
     "eslint": "eslint source/**/*.js",
@@ -23,8 +23,8 @@
     "postinstall": "npm run build",
     "start": "node dist/server/app.js",
     "test": "npm run eslint && npm run flow && npm run build",
-    "webpack": "webpack",
-    "webpack:watch": "webpack  --progress --colors --watch"
+    "webpack": "webpack --progress --colors",
+    "webpack:dev:watch": "webpack --config webpack.dev.js  --progress --colors --watch"
   },
   "repository": {
     "type": "git",
