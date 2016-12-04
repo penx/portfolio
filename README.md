@@ -10,6 +10,7 @@ Portfolio Site utilising:
 - API Blueprint and mock server via portfolio-api-blueprint
 - Bootstrap 4 as a reset and mixin library only
 - Flow for type checking
+- GitHub/Travis/Heroku toolchain
 
 To run:
 
