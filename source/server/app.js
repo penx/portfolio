@@ -46,8 +46,7 @@ if (config.api.type === 'blueprint') {
 // prop in ejs template?
 reactApp.use(compression())
 reactApp.set('view engine', 'ejs')
-reactApp.use('/styles', express.static(path.join(__dirname, '../styles')))
-reactApp.use('/client', express.static(path.join(__dirname, '../client')))
+reactApp.use('/static', express.static(path.join(__dirname, '../../static')))
 reactApp.get('*', (req, res) => {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (error) {

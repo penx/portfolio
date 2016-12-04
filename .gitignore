@@ -3,3 +3,5 @@ dist
 .DS_Store
 portfolio.sublime-workspace
 /npm-debug.log
+/static/js
+/static/styles
