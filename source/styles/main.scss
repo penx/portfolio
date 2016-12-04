@@ -5,18 +5,15 @@
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/normalize";
 
-
 // Use Google Material for initial look and feel, override later
 
 @import "../../node_modules/material-design-lite/src/variables";
 @import "../../node_modules/material-design-lite/src/mixins";
 
-
 $col-primary: #9B26AF;
 $col-primary-alt1: #7A1EA1;
 $col-primary-alt2: #691A99;
 $col-accent: #68EFAD;
-
 
 html, body {
     font-family: $performance_font;

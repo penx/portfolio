@@ -13,7 +13,6 @@ import { renderToString } from 'react-dom/server'
 // import portfolioApi from 'portfolio-api'
 import portfolioApiBlueprint from 'portfolio-api-blueprint'
 
-
 // internal
 import routes from '../shared/routes'
 
