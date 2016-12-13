@@ -7,6 +7,7 @@ import Root from './containers/Root'
 import ArticleComponent from './components/Article'
 import ProjectComponent from './containers/Project'
 
+// TODO: update to React Router 4
 export default (
   <Route path="" component={Root}>
     <Route path="/" component={ArticleComponent} />

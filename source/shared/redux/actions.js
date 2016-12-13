@@ -2,22 +2,23 @@
 
 import fetch from 'isomorphic-fetch'
 
+import type { Project } from '../types/Project'
+
 export const REQUEST_PROJECT = 'REQUEST_PROJECT'
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT'
 
-function requestProject(projectSlug) {
+function requestProject(projectSlug: string) {
   return {
     type: REQUEST_PROJECT,
     projectSlug,
   }
 }
 
-function receiveProject(projectSlug, json) {
+function receiveProject(projectSlug: string, project: Project) {
   return {
     type: RECEIVE_PROJECT,
     projectSlug,
-    title: json.title,
-    project: json,
+    result: project,
     receivedAt: Date.now(),
   }
 }
@@ -46,11 +47,11 @@ function shouldFetchProject(state, projectSlug) {
   return project.didInvalidate
 }
 
-export function fetchProjectIfNeeded(projectSlug: string) {
+export function fetchProjectIfNeeded(projectSlug: string): ?Function {
   return (dispatch: Function, getState: Function) => {
     if (shouldFetchProject(getState(), projectSlug)) {
       return dispatch(fetchProject(projectSlug))
     }
-    return false
+    return undefined
   }
 }

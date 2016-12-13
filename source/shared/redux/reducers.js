@@ -7,27 +7,32 @@ import {
   REQUEST_PROJECT,
 } from './actions'
 
-function project(state = {
+import type { Project } from '../types/Project'
+import type { Async } from '../types/Async'
+
+function project(state: Async<Project> = {
   isFetching: false,
-  project: {},
-}, action) {
+}, action): Async<Project> {
+  let aproject: Async<Project>
+
   switch (action.type) {
     case REQUEST_PROJECT:
       return Object.assign({}, state, {
         isFetching: true,
       })
     case RECEIVE_PROJECT:
-      return Object.assign({}, state, {
+      aproject = {
         isFetching: false,
-        project: action.project,
+        result: action.result,
         lastUpdated: action.receivedAt,
-      })
+      }
+      return Object.assign({}, state, aproject)
     default:
       return state
   }
 }
 
-function projects(state = { }, action) {
+function projects(state: { [key: string]: Async<Project>} = { }, action) {
   switch (action.type) {
     case RECEIVE_PROJECT:
     case REQUEST_PROJECT:
