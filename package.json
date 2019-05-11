@@ -24,7 +24,9 @@
     "start": "node dist/server/app.js",
     "test": "npm run eslint && npm run flow && npm run build",
     "webpack": "webpack --progress --colors",
-    "webpack:dev:watch": "webpack --config webpack.dev.js --progress --colors --watch"
+    "webpack:dev:watch": "webpack --config webpack.dev.js --progress --colors --watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -59,7 +61,8 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
     "redux-thunk": "^2.1.0",
-    "webpack": "^1.13.3"
+    "webpack": "^2.2.0",
+    "snyk": "^1.163.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
@@ -72,5 +75,6 @@
     "eslint-plugin-react": "^6.7.1",
     "flow-bin": "^0.36.0",
     "nodemon": "^1.11.0"
-  }
+  },
+  "snyk": true
 }
