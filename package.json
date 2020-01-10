@@ -49,7 +49,7 @@
     "express": "^4.13.4",
     "isomorphic-fetch": "^2.2.1",
     "material-design-lite": "^1.2.1",
-    "node-sass": "^3.13.0",
+    "node-sass": "^4.4.0",
     "portfolio-api": "penx/portfolio-api",
     "portfolio-api-blueprint": "penx/portfolio-api-blueprint",
     "react": "^0.14.7",
