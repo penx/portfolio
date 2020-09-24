@@ -47,7 +47,7 @@
     "compression": "^1.6.2",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^3.0.0",
     "material-design-lite": "^1.2.1",
     "node-sass": "^3.13.0",
     "portfolio-api": "penx/portfolio-api",
